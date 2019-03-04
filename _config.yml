@@ -22,6 +22,8 @@ instagram_username: mikinotdavid
 github_username:  mpokryva
 # Google Analytics
 google_analytics: UA-135439800-1
+disqus:
+    shortname: itsmikiblog
 
 # Build settings
 markdown: kramdown
