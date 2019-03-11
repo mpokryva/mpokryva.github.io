@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "High Speed Line Following Robot Tutorial"
-date: 2019-02-25 22:31:14 -0500
+title: "Raspberry Pi Line Following Robot Tutorial"
+date: 2019-03-10 20:11:14 -0500
 categories: jekyll update
 ---
 
@@ -39,7 +39,24 @@ Since Adafruit's assembly guide is for a generic, camera-less robot, we also nee
 
 ## 2. OpenCV image processing
 
-After we've assembled our robot, the next step in the process is to determine the robot's error at each frame, so we'll know how much to adjust. But, even before we do that, we should determine what error we're looking for. Very simply, **the error of the robot is its horizontal distance from the center of the line.** If the robot is turned excessively to the left, for instance, the image it captures will show that it's off-center to the left. The challenge is in parsing out only the line in the image, and determining its center. Let's get started. The code below shows how we transform the image the robot takes at each frame into a contour (an outline specified by an array of (x, y) coordinates) of the line.
+After we've assembled our robot, the next step in the process is to determine the robot's error at each frame, so we'll know how much to adjust. But, even before we do that, we should determine what error we're looking for. Simply put, **the error of the robot is its horizontal (x) distance from the center of the line.** If the robot is turned excessively to the left, for instance, the image it captures will show that it's off-center to the left. The challenge is in parsing out only the line in the image, and determining its center.
+
+
+| <img src="/assets/line-robot/error_diagram.png" width="600" class="center"> | 
+|:--:| 
+| Example: The robot is facing to the left, so the error we're trying to calculate is represented by the red line. <br> (Not to scale, obviously) |
+
+
+The code below shows how we transform the image the robot takes at each frame into a contour (an outline specified by an array of (x, y) coordinates) of the line.
+
+The process consists of:
+
+1. Converting the image to grayscale.
+2. Applying a Gaussian blur to decrease noise.
+3. Thresholding the image, converting the irrelevant parts to black.
+    and the relevant parts white.
+4. Finding all contours in the thresholded image.
+5. Returning the largest contour (by area), which is hopefully the line.
 
 ``` python
 # Gets the largest contour in the image, by area,
@@ -80,11 +97,11 @@ I learned about PID control from Udacity's free [Artificial Intelligence for Rob
 
 ### Why do we need PID control? 
 
-Let's take a step back. From part 2, we've figured out the error of the robot at each frame, so we know how much the robot needs to adjust. If we simply turn the robot in the opposite direction, proportionally to its error, our robot's movement will be extremely choppy, and it may even veer off path. 
+Let's take a step back. From part 2, we've figured out the error of the robot at each frame, so we know how much the robot needs to adjust. If we simply turn the robot in the opposite direction, proportionally to its error, our robot's movement will be extremely choppy, and it may even steer off path. 
 
 This becomes especially significant when the robot needs to navigate non-straight lines. If we only turn and slow down proportionally to the error, when the robot encounters a turn, it won't slow down in time and its inertia will propel it off path.
 
-So, we need the robot to move smoothly, and be able to handle turns. This is where PID control comes in.
+So, we need the robot to move smoothly and be able to handle turns. This is where PID control comes in.
 
 ### What is PID control? 
 
@@ -98,7 +115,7 @@ We know our error and our desired setpoint (the center of the line), and we need
 
 Now that we know what a PID controller is on a high level, let's understand its individual components.
 
-The **P** stands for **proportional**, and is pretty intuitive to understand. We have an error, and we should take its magnitude into account. But why do we need the **I** and **D** terms?
+The **P** stands for **proportional**, and is pretty intuitive to understand. We have an error, and we should take its magnitude into account.
 
 The **I** stands for **integral**. This term is simply the sum of *n* previous error values, and accounts for the time the error has persisted. If we've had an error for a longer time, this means we should probably apply more correction.
 
@@ -112,7 +129,7 @@ The **D** stands for **derivative**. This term is simply equal to ```(current_er
 
 ### What are PID *gains*?
 
-A PID controller calculates a correction values, with contribution from three terms. However, we need to consider how much each term should actually contribute to the correction. A gain is simply *a weight we give to each component of the controller*. Usually P has the largest gain, which should be intuitive to understand. If you look closely at the code below, you'll notice an additional **s_gain** variable at the bottom. This is a gain I use specifically to correct the robot's speed, and is an optimization I picked up from [this paper](https://www.sciencedirect.com/science/article/pii/S1877050915038302).
+A PID controller calculates a correction values, with contribution from three terms. However, we need to consider how much each term should actually contribute to the correction. A gain is simply *a weight* we give to each component of the controller. Usually P has the largest gain, which should be intuitive to understand. If you look closely at the code below, you'll notice an additional **s_gain** variable at the bottom. This is a gain I use specifically to correct the robot's speed, and is an optimization I picked up from [this paper](https://www.sciencedirect.com/science/article/pii/S1877050915038302).
 
 Below is the code for the main method of the PID controller with comments to explain each part. As you can see, it's quite short and simple.
 
@@ -152,7 +169,9 @@ The code below is the main video capture loop. In it, we:
 4. Actually move the robot.
 5. Clear the buffer in preparation for the next frame.
 
-If you check out the full source code on [my GitHub](https://github.com/mpokryva/LineTrackerPy/blob/master/line.py), you will notice I use a relatively low framerate of 15. This is because the Pi cannot process the frames quicker than this. In fact, 15 is probably too high, and a framerate of 10 or less would suffice as well.
+*Note*: Even though we calculate the y distance, it's actually not used anywhere.
+
+If you check out the full source code on [my GitHub](https://github.com/mpokryva/LineTrackerPy/blob/master/line.py), you will notice I use a relatively low framerate of 15 fps. This is because the Pi cannot process the frames quicker than this. In fact, 15 is probably too high, and a framerate of 10 fps or less would suffice as well.
 
 ``` python
 for frame in camera.capture_continuous(rawCapture, format="bgr", \
@@ -234,4 +253,6 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", \
 
 ## The end result
 
-{% include youtube_video.html id="QYSfXf6VR3A" %}
+{% include youtube_video.html id="QYSfXf6VR3A" %}      
+<br>
+#### Full implementation can be found [<u>here</u>](https://github.com/mpokryva/LineTrackerPy).
