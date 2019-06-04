@@ -52,7 +52,7 @@ Lo and behold, all of the `console.log` calls in the k6 subprocess showed up thr
 
 Another strange thing happened. k6 no longer got stuck! I commented and uncommented the above block several times and reran the program each time, just to check my sanity, and confirmed that adding this snippet "unblocked" the process.
 
-After some more research, I finally figured out that the bug I'd seen had to do with [Linux pipe capacity](http://man7.org/linux/man-pages/man7/pipe.7.html). Unbeknownst to me and to several people I working on this software with, Linux pipes (which is what stdout and stderr are), have a maximum capacity! According to the pipe man page, 
+After some more research, I finally figured out that the bug I'd seen had to do with [Linux pipe capacity](http://man7.org/linux/man-pages/man7/pipe.7.html). Unbeknownst to me and to several people I was working on this software with, Linux pipes (which is what stdout and stderr are), have a maximum capacity! According to the pipe man page, 
 
 > A pipe has a limited capacity.  <b>If the pipe is full, then a write(2) will block or fail</b>, depending on whether the O_NONBLOCK flag is set (see below).  Different implementations have different limits for the pipe capacity. Applications should not rely on a particular capacity: an application should be designed so that a reading process consumes data as soon as it is available, so that a writing process does not remain blocked.
 
@@ -85,7 +85,7 @@ write size:     262144; bytes successfully before error: 0
 It seems that the pipe capacity, at least for stdout is 65536 bytes.
 
 
-The following is a short Node program you can try running that shows how filling a pipe to maximum capacity blocks your process from finishing. You can uncomment the `child.stdout.on` block to get the process to exit properly. All this program does is spawn a subprocess that echos a really long string (100,000 'a's) to stdout.
+The following is a short Node program you can try running that shows how filling a pipe to maximum capacity blocks your process from finishing. You can uncomment the `child.stdout.on` block to get the process to exit properly. All this program does is spawn a subprocess that echoes a really long string (100,000 'a's) to stdout.
 
 Note that in some systems, according to the [man page](http://man7.org/linux/man-pages/man7/pipe.7.html), the write will fail, rather than block.
 
