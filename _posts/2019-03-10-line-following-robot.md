@@ -2,7 +2,7 @@
 layout: post
 title: "Raspberry Pi Line Following Robot Tutorial"
 date: 2019-03-10 20:11:14 -0500
-categories: jekyll update
+categories: [robotics, opencv, hardware]
 ---
 
 <img src="/assets/line-robot/robot_moving.gif" width="740">
