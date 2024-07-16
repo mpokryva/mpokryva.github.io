@@ -1,0 +1,60 @@
+- company: Stealth startup, Remote
+  position: Founding Engineer
+  duration: February 2022 &mdash; Present
+  summary: |
+    Building cool stuff :)
+
+- company: MadHive, New York, NY
+  position: Backend Software Engineer 
+  duration: December 2020 &mdash; February 2022
+  summary: |
+    <ul>
+    <li>Working on MadHive’s core API platform, “MadServer,” which is responsible for handling a large percentage of internal and user-facing queries. Using Go, GCP, BigQuery, Postgres, and Swagger.</li>
+    <li> Designed and independently implemented a service from scratch to continuously sync critical user data from MadHive’s central database to BigQuery. This service needs to ensure perfect data integrity, and the design decisions I made were critical in making this not just possible, but easy to implement and debug.</li>
+    <li>Independently came up with and implemented a solution to reduce payload size by 10x for one of MadHive’s slowest and most critical queries in its UI using protobuf <a href="https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/field-mask">field masks</a>.</li>
+    </ul>
+
+- company: Confluent, Mountain View, CA 
+  position: Backend Software Engineer | Platform Services Team (API and CLI groups)
+  duration: August 2019 &mdash; December 2020
+  summary: |
+    <ul>
+    <li>Worked on a core platform component, a highly automated API framework that’s leveraged widely across Confluent Cloud services. Use Go, Bash, OpenAPI, protobuf/gRPC, and Postgres.</li>
+    <li> Won 1st place at a Confluent hackathon by speeding up service deployments to our test environment by nearly 7x, and enabling developers to interactively debug their test environments. The previous debugging workflow consisted of adding print statements and redeploying services until the bug was found. It's likely that this workflow has made debugging cloud services an order of magnitude faster for many engineers at Confluent.
+    <br/>
+    <br/>
+    <img style="margin: auto auto; display: block" width="350px" src="../images/hack-message.png"/>
+    <figcaption>
+    A message my co-worker got from someone about my hack.
+    </figcaption>
+    </li>
+    <li>Developed a mechanism to measure integration test coverage for the Confluent CLI (command line interface), a tool used
+    extensively by both Confluent and its customers. On my own accord, I generalized the solution, <a href="https://github.com/confluentinc/bincover">open-sourced</a> it, and wrote
+    an accompanying <a href="https://www.confluent.io/blog/measure-go-code-coverage-with-bincover/">blog post</a>.</li>
+    <li>Won the People’s Choice Award at Confluent’s first hackathon for developing an interactive shell feature that significantly
+    improved the usability of the CLI. This was the only award at the hackathon granted democratically, demonstrating the demand and viability of our project. I was the engineering lead to ship this feature into production, and did so successfully.</li>
+    <li>Launched an initiative to improve the quality of the CLI in which I single-handedly completed a refactoring of several thousand lines of code. This significantly improved the flexibility and robustness of the codebase and fixed a number of critical bugs. I received an “engineering superstar” award for this after being at Confluent for only four months.</li>
+    <li>Implemented a new type of API key and related API key-based authentication that’s widely used in Confluent’s UI and APIs.</li>
+    <li>Integrated tools in CI pipelines to ensure backward compatibility was maintained across Confluent’s private and public APIs.</li>
+    <li>Advocated for and implemented API infrastructure utilities that are used across Confluent Cloud services to provide a
+    consistent public API experience.</li>
+    <li>I signed my offer when Confluent had 400 people, joined 10 months later when it had 850, and did 3-4 interviews a week for two months, less than a month after joining.</li>
+    </ul>
+
+- company: Amazon, Seattle, WA
+  position: Software Engineering Intern | AWS Marketplace Search Team
+  duration: May 2018 &mdash; August 2018
+  summary: |
+    <ul>
+    <li>Owned the end-to-end system design and implementation of a proof of concept optimizing the scalability and maintenance of AWS Marketplace’s search platform using several graph databases.</li>
+    <li>Leveraged the Apache TinkerPop graph computing framework for complex graph queries.</li>
+    </ul>
+
+- company: TodayTix, New York City, NY
+  position: iOS Software Engineering Intern 
+  duration: June 2017 &mdash; August 2017
+  summary: |
+    <ul>
+    <li>Implemented the home page for the company’s new <a href="https://www.todaytix.com/x/nyc/discover">“Discover”</a> feature.</li>
+    <li>Completed a major part of an app-wide API migration.</li>
+    </ul>

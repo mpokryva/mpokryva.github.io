@@ -3,3 +3,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 *.lock
+.DS_Store
+_vendor/
+.idea/
+public/
+*.swp
