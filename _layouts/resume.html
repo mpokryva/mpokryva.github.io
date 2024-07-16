@@ -76,16 +76,15 @@ layout: default
       <p class="resume-item-copy">{{ job.summary }}</p>
     </div><!-- end of resume-item -->
     {% endfor %}
-
   </section>
   <!-- end Experience -->
   {% endif %}
-  {% include slant.html fill=primary-color %}
 </div>
 
 
+{% if site.resume_section_projects %}
+{% include slant.html fill=primary-color %}
 <div class="theme-dark r3-c1-grid p-top-5">
-  {% if site.resume_section_projects %}
   <!-- begin Projects -->
   <section class="content-section">
     <header class="section-header">
@@ -105,14 +104,14 @@ layout: default
     {% endfor %}
   </section>
   <!-- end Projects -->
-  {% endif %}
-  {% include slant.html fill='white' %}
 </div>
+{% include slant.html fill='white' %}
+{% endif %}
 
 
 {% if site.resume_section_skills %}
 <!-- begin Skills -->
-<section class="content-section p-top-5">
+<section class="content-section">
 
   <header class="section-header">
     <h2>Skills</h2>

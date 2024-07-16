@@ -1,12 +1,7 @@
 - skill: Languages 
   description:
-      Proficient in Go, Java, and Python. Intermediate in Bash and JavaScript. Some experience with C, C++, and Lua. Currently, my favorite language is Go.
+    Java, Rust, Go. Javascript and Python here and there. Can pick up languages quickly.
 
 - skill: Infrastructure
   description:
-    Linux, Kubernetes, Postgres, Terraform, Vault, MongoDB, AWS (EC2, ELB, Neptune), Nginx/Apache, Elasticsearch, Memcached, Ansible, Protobuf/gRPC, OpenAPI, JSON:API, Node.js.
-
-
-- skill: Other
-  description: 
-    Keras, neural networks (mostly CNNs), OpenCV, and PID control.
+    Linux, Kubernetes, Postgres, Terraform, Vault, AWS, Protobuf/gRPC, OpenAPI.

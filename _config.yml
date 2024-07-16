@@ -1,9 +1,8 @@
 # Site settings
-url: https://mpokryva.github.io/resume-template/
-display_url: mpokryva.github.io/resume-template/
-repository: mpokryva/resume-template
+url: https://mpokryva.github.io
+display_url: github.com/mpokryva
+repository: mpokryva.github.io
 title: "Miki Pokryvailo"
-description: "I’m an energetic, easy-going software engineer that thrives on solving ill-defined problems proactively and autonomously."
 
 # Build settings
 markdown: kramdown
@@ -23,9 +22,9 @@ resume_contact_email:           "mpokryva@gmail.com"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
 resume_contact_telephone:       "(631) 664-1379"
-resume_contact_address:         "Mountain View, CA"
+resume_contact_address:         "New York, NY"
 
-resume_header_contact_info:     "Mountain View &bull; (631) 664-1379 &bull; mpokryva@gmail.com"
+resume_header_contact_info:     "New York &bull; (631) 664-1379 &bull; mpokryva@gmail.com"
 display_header_contact_info:    false
 
 # use "yes" to display the email contact button,
@@ -39,7 +38,7 @@ display_header_contact_info:    false
 # comment out to hide
 resume_section_experience:      true
 resume_section_education:       true
-resume_section_projects:        true
+resume_section_projects:        false
 resume_section_skills:          true
 resume_section_recognition:     false
 resume_section_links:           false
