@@ -381,6 +381,9 @@ figure {
 }
 
 @media print {
+    main {
+      margin: auto;
+    }
 	.p-top-5 {
 		padding-top: 0vh;
 	}
@@ -409,7 +412,7 @@ figure {
 		padding-top: 0in;
 	}
 	.wrapper {
-		max-width: none;
+		max-width: 90%;
 		padding: 0;
 	}
 	.contact-info {
@@ -437,7 +440,7 @@ figure {
 		margin: 0.5in 1in;
 	}
 	body {
-		font-size: 12px !important;
+		font-size: 16px !important;
 	}
 	#top {
 		padding-bottom: 0 !important;

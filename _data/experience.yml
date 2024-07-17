@@ -4,7 +4,7 @@
   summary: |
     <ul>
     <li>I was the first hire at Nile. I built much of our initial product, introduced row-level security in the company, and wrote an <a href="https://news.ycombinator.com/item?id=32241820" target="_blank">HN-viral</a> <a href="https://www.thenile.dev/blog/app/blog/row-level-security" target="_blank">blog</a> about it.</li>
-    <li>When we pivoted to a tenant-aware database, I built our SQL parsing framework using Java, contributed to the Rust database sync engine, maintained existing infra with Pulumi, designed and worked on building the initial billing infra, helped define the TypeScript SDK experience, made CI go fast, and more.
+    <li>When we pivoted to a tenant-aware database, I built our SQL parsing framework using Java, contributed to the Rust database sync engine, maintained and provisioned infra with Pulumi, designed and worked on building the initial billing infra, helped define the TypeScript SDK experience, made CI go fast, and more.
     </ul>
 
 - company: MadHive, New York, NY
@@ -13,7 +13,7 @@
   summary: |
     <ul>
     <li>Worked on MadHive’s core API platform, responsible for handling most internal and user-facing queries. Used Go, GCP, BigQuery, Postgres, and Swagger.</li>
-    <li> Designed and independently implemented a service from scratch to continuously sync critical user data from MadHive’s central database to BigQuery.</li> 
+    <li> Designed and independently implemented a service from scratch to sync critical user data from MadHive’s central database to BigQuery.</li> 
     </ul>
 
 - company: Confluent, Mountain View, CA 
@@ -22,7 +22,7 @@
   summary: |
     <ul>
     <li>Worked on the core API framework used across Confluent Cloud services. Use Go, Bash, OpenAPI, protobuf/gRPC, and Postgres.</li>
-    <li> Won 1st place at a Confluent hackathon by speeding up deployments to our test environment by ~7x, and enabling developers to interactively debug their test environments (instead of adding print statements and redeploying). It's likely that this workflow has made debugging cloud services an order of magnitude faster for many engineers at Confluent.
+    <li> Won 1st place at the Confluent hackathon for enabling developers to interactively debug their test environments (instead of adding print statements and redeploying). It's likely that this workflow has made debugging cloud services an order of magnitude faster for many engineers at Confluent.
     <br/>
     <br/>
     <img style="margin: auto auto; display: block" width="350px" src="../images/hack-message.png"/>
@@ -30,15 +30,12 @@
     A message my co-worker got from someone about my hack.
     </figcaption>
     </li>
-    <li>Developed a mechanism to measure integration test coverage for the Confluent CLI (command line interface), used
-    extensively by both Confluent and its customers. On my own accord, I generalized the solution, <a href="https://github.com/confluentinc/bincover">open-sourced</a> it, and wrote
-    an accompanying <a href="https://www.confluent.io/blog/measure-go-code-coverage-with-bincover/">blog post</a>.</li>
-    <li>Won the People’s Choice Award at Confluent’s first hackathon for developing an interactive shell feature that
-    improved the usability of the CLI. Afterwards, I was the engineering lead who shipped this feature to production.</li>
-    <li>Proactively and single-handedly completed a refactoring of several thousand lines of code to improve the quality of Confluent's CLI. This significantly improved the flexibility and robustness of the codebase and fixed a number of critical bugs. I received an “engineering superstar” award for this after being at Confluent for only four months.</li>
-    <li>Implemented a new type of API key and related API key-based authentication that’s widely used in Confluent’s UI and APIs.</li>
-    <li>Added API backward compatibility checks to CI for Confluent’s private and public APIs.</li>
-    <li>I signed my offer when Confluent had 400 people, joined 10 months later when it had 850, and did 3-4 interviews a week for months, less than a month after joining to help scale the startup to 1200+ people.</li>
+    <li>Developed, <a href="https://github.com/confluentinc/bincover">open-sourced</a>, and <a href="https://www.confluent.io/blog/measure-go-code-coverage-with-bincover/">blogged about</a> a mechanism to measure integration test coverage for the Confluent CLI (command line interface).</li>
+    <li>Won the People’s Choice Award at Confluent’s first hackathon for developing an interactive shell feature for the CLI. Afterwards, I was the engineering lead who shipped this feature to production.</li>
+    <li>Completed a several-thousand-line refactoring of Confluent's CLI on my own initiative, fixing several critical bugs in the process. I received an "engineering superstar" award for this after being at Confluent for only four months.</li>
+    <li>Implemented a new type of API key and API key-based authentication that’s widely used in Confluent’s UI and APIs.</li>
+    <li>Added backward compatibility checks to CI for Confluent’s private and public APIs.</li>
+    <li>I signed my offer when Confluent had 400 people, and joined 10 months later when it had 850. Less than a month after joining, I did 3-4 interviews a week to help scale the company to 1200+ people.</li>
     </ul>
 
 - company: Amazon, Seattle, WA
